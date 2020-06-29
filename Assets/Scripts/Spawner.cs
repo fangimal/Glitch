@@ -33,14 +33,8 @@ public class Spawner : MonoBehaviour
             Debug.LogWarning("Количество ограничено из-за фрейм рейта");
         }
         float threshold = spawnPerSeconds * Time.deltaTime/5; //Потолок по значению
-        if (Random.value < threshold)
-        {
-            return true;
-        }
-        else 
-        { 
-            return false; 
-        }
-        //return true;
+        
+        return (Random.value < threshold); //Возвращает true или false
+      
     }
 }
