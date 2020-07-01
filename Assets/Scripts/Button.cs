@@ -15,10 +15,11 @@ public class Button : MonoBehaviour
 	{
 		buttonArray = GameObject.FindObjectsOfType<Button>();
 
-		costText = GetComponentInChildren<Text>();
-		if (!costText) { Debug.LogWarning(name + " has no cost "); }
+		costText = GetComponentInChildren<Text>(); //Получить дочерний объект Текст
+		if (!costText) { Debug.LogWarning(name + " У объекта отсутствует компонет Текст"); }
 
-		//costText.text = defenderPrefab.GetComponent<Defender>().starCost.ToString();
+		//Передадим значения со стоимостью дефендеров в текстовое поле, при покупке
+		costText.text = defenderPrefab.GetComponent<Defender>().starCost.ToString();
 	}
 
 	void Update()
